@@ -8,6 +8,9 @@ app.use(express.json());
 app.use(cors());
 // ================================ROUTES=========================
 const userRoute = require("./user/userRoute");
+app.get("/",(req,res)=>{
+  res.send("From Home")
+})
 app.use("/", userRoute);
 dbConnection();
 app.listen(PORT, () => {
